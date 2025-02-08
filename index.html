@@ -29,7 +29,7 @@
     // ฟังก์ชันตรวจสอบตำแหน่งผู้ใช้
     function checkLocation() {
       if (localStorage.getItem(`usedToday-${today}`)) {
-        alert("อุปกรณ์นี้ได้ดำเนินการลงทะเบียนแล้ว");
+        alert("ขออภัย อุปกรณ์นี้ได้ดำเนินการลงทะเบียนแล้ว");
         return;
       }
 
@@ -41,16 +41,16 @@
 
           if (distance <= maxDistance) {
             localStorage.setItem(`usedToday-${today}`, "true");
-            window.location.href = "https://m2.cpd.go.th/digital/info/?";
+            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSexUJxJ9LVJVIbBFi-x4hTTVykv0hbTvGPWKel1EtGBMStUsQ/viewform?usp=sharing";
           } else {
-            document.getElementById('message').innerText = "คุณอยู่นอกเขต ไม่สามารถลงทะเบียนได้";
+            document.getElementById('message').innerText = "ขออภัย คุณอยู่นอกเขตพื้นที่ไม่สามารถลงทะเบียนได้";
           }
         }, (error) => {
           console.log(error);
-          document.getElementById('message').innerText = "ไม่สามารถเข้าถึงข้อมูลตำแหน่งได้";
+          document.getElementById('message').innerText = "ขออภัย ไม่สามารถเข้าถึงข้อมูลตำแหน่งได้";
         });
       } else {
-        document.getElementById('message').innerText = "เบราว์เซอร์ของคุณไม่รองรับการเข้าถึงตำแหน่ง";
+        document.getElementById('message').innerText = "ขออภัย เบราว์เซอร์ของคุณไม่รองรับการเข้าถึงตำแหน่ง";
       }
     }
   </script>
